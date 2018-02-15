@@ -1,7 +1,7 @@
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
-    apiKey: 'a30fc40e2df746aeb73eed53ba73b157'
+    apiKey: proicess.env.API_CLARIFAI
 });
 
 const handleApiCall = (req, res) => {
@@ -24,6 +24,7 @@ const handleImage = (req, res, db) => {
         })
         .catch(err => res.status(400).json('unable to get entries'))
 }
+
 
 module.exports = {
     handleImage,
